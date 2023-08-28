@@ -1,0 +1,211 @@
+
+body{
+    background-image: url("../img/doska.jpeg");
+    background-size: cover;
+    position: relative;
+
+
+}
+.loginform {
+    max-width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+.butenter{
+    min-width: 200px;
+    
+}
+
+    .zagolovokhead {
+    color: white;
+    margin-right: 250px;
+    margin-top: 50px;
+    font-size:xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+  
+    }
+
+
+    .zagolovok{
+    color: white;
+    margin-left: 200px;
+      }
+
+ul{
+font-family:cursive;
+font-size: larger;
+list-style-type: none;
+}
+
+a {
+text-decoration: none;
+  
+
+}
+    
+    
+a:link {
+color: white;
+    
+}
+    
+a:visited {
+    color: gold;
+    
+}
+   
+    
+
+    
+a:active {
+    color: white;
+    
+}
+
+
+.leftbut{
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+
+
+ 
+}
+
+.rightbut{
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+
+}
+
+.buttons{
+   
+    min-height: 60px;
+
+
+}
+
+.headpage{
+    color: white;
+    margin-left: 20px;
+    font-size:medium
+
+}
+
+.zagolovok2{
+    color: white;
+   text-align: center;
+    text-transform: uppercase;
+    margin-top: 50px;
+    font-size: xx-large;
+   letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.table{
+    max-width:1000px;
+    margin-left: 150px;
+    margin-top: 50px;
+    text-align: center;
+}
+.modify{
+    color: gold;
+    font-size: larger;
+    text-align: center;
+    margin-top: 50px;
+}
+.tabmodify{
+   margin-top: 20px;
+    margin-left: 300px;
+  
+}
+.push{
+    min-width: 200px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.main{
+    float: none;
+    text-align:end;
+}
+.displist{
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.disptbut{
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+.tabdata{
+    text-align: left;
+}
+.hello{
+color: gold;
+text-align: center;
+font-size: x-large;
+font-family:Arial, Helvetica, sans-serif;
+margin-top: 50px;
+font-weight: bolder;
+}
+
+.features{
+    color: gold;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    margin-top: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 3px;
+   
+ 
+}
+.features2{
+    color: gold;
+    letter-spacing: 3px;
+    font-size: larger;
+    font-weight: bolder;
+    margin-left: 55px;
+    text-decoration:underline;
+    padding-bottom: 20px;
+
+}
+.functions{
+    text-align: center;
+padding-top: 20px;
+}
+.termselect{
+    max-width: 550px;
+    margin-left: 150px;
+}
+.displist2{
+    color: white;
+    font-size: x-large;
+  margin-top: 20px;
+  margin-left: 150px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.discselect{
+    margin-top: 20px;
+    
+
+}
+.termselect2{
+    max-width: 250px;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+.point{
+    margin-top: 40px;
+    margin-right: 180px;
+    min-width: 150px;
+}
+.login_error{
+  color: yellow;
+    text-align: center;
+}
+
