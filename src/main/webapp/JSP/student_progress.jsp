@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-sm-12">
             <p class="displist">Отображена успеваемость для выбранного студента:</p>
-            <table class="table table-dark table-striped-columns">
+            <table class="table table-dark table-striped-columns tabdata">
 
 
                 <thead>
@@ -69,7 +69,7 @@
     <div class="row">
         <div class="col-sm-6">
 
-            <table class="table table-dark table-striped-columns">
+            <table class="table table-dark table-striped-columns tabdata">
 
 
                 <thead Список дисциплин>

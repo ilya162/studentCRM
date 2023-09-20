@@ -13,6 +13,7 @@ import java.util.List;
 public class TermCreateController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         DbManager db = new DbManager();
         List<Discipline> disciplines = db.getActiveDiscipline();
         request.setAttribute("disciplines", disciplines);
@@ -25,10 +26,12 @@ public class TermCreateController extends HttpServlet {
 
         String name = request.getParameter("name");
         String duration = request.getParameter("duration");
-        String disciplines = request.getParameter("disciplines");
+        String[] id = (request.getParameterValues("idDiscipline"));
 
         DbManager db = new DbManager();
-        db.createTerm(name, duration,disciplines);
+
+
+        db.createTerm(name, duration, id);
 
 
         response.sendRedirect("/term");

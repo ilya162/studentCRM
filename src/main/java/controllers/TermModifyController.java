@@ -11,17 +11,15 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "TermController", value = "/term")
-public class TermController extends HttpServlet {
+@WebServlet(name = "TermModifyController", value = "/term_modify")
+public class TermModifyController extends HttpServlet {
+    private String ids;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String selectId = request.getParameter("modifyTermHidden");
         DbManager db = new DbManager();
         List<Term> terms = db.getActiveTerms();
-        DbManager db2 = new DbManager();
-
-
-        String selectId = request.getParameter("idTerm");
         Term termFirst = new Term();
         if (terms.size() > 0) {
             if (selectId == null) {
@@ -33,18 +31,28 @@ public class TermController extends HttpServlet {
 
             }
 
-            String id = String.valueOf(termFirst.getId());
+            String ids = String.valueOf(termFirst.getId());
             request.setAttribute("terms", terms);
             request.setAttribute("termFirst", termFirst);
-            List<Discipline> disciplines = db.getDisciplineToTerm(id);
+
+
+            List<Discipline> disciplines = db.getDisciplineToTerm(ids);
             request.setAttribute("disciplines", disciplines);
+            request.getRequestDispatcher("JSP/term_modify.jsp").forward(request, response);
+
         }
-            request.getRequestDispatcher("JSP/term.jsp").forward(request, response);
 
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        String duration = request.getParameter("duration");
+        String[] ids = request.getParameterValues("idDiscipline");
+
+        DbManager db = new DbManager();
+
+        db.modifyTerm(id, duration, ids);
+        response.sendRedirect("/term");
+    }
 }
-
-
-
-
-

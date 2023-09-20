@@ -46,8 +46,8 @@
     <p class="modify">Для создания дисциплины, заполните название и нажмите "Создать".</p>
 
     <form action="/discipline_create" method="post">
-        <div class="row mb-3 tabmodify">
-            <label class="col-sm-2 col-form-label"></label>
+        <div class="row tabmodify">
+
             <div class="col-sm-5">
                 <input type="text" class="form-control" name="name" required>
                 <button type="submit" class="btn btn-primary push">Создать</button>

@@ -2,7 +2,7 @@ function deleteStudents() {
     var checkedCheckboxs =
         document.querySelectorAll('input[name=idStudent]:checked')
     if (checkedCheckboxs.length == 0) {
-        alert("Выберите хотябы одного студента!!!")
+        alert("Выберите хотя бы одного студента!!!")
         return;
     }
     // "1 2 5 7" - string
@@ -76,7 +76,7 @@ function deleteDiscipline() {
     var checkedCheckboxs =
         document.querySelectorAll('input[name=idDiscipline]:checked')
     if (checkedCheckboxs.length == 0) {
-        alert("Выберите хотябы одну дисциплину!!!")
+        alert("Выберите хотя бы одну дисциплину!!!")
         return;
     }
     // "1 2 5 7" - string
@@ -112,6 +112,10 @@ function changeTerm() {
 function deleteTerm() {
     var checkedCheckboxs =
         document.querySelectorAll('input[name=idTerm]:checked')
+    if (checkedCheckboxs.length == 0) {
+        alert("Выберите один семестр!!!")
+        return;
+    }
 
     // "1 2 5 7" - string
     var ids = ""
@@ -124,4 +128,40 @@ function deleteTerm() {
     document.getElementById("deleteTermHidden").value = ids;
     document.getElementById('deleteTermForm').submit();
 }
+function term_modify() {
+    var checkedCheckboxs =
+        document.querySelectorAll('input[name=idTerm]:checked')
+    if (checkedCheckboxs.length == 0 || checkedCheckboxs.length > 1) {
+        alert("Выберите один семестр!!!")
+        return;
+    }
+
+    // "1 2 5 7" - string
+    var ids = ""
+    for (var i = 0; i < checkedCheckboxs.length; i++) {
+        ids = ids + checkedCheckboxs[i].value + ",";
+    }
+    ids = ids.substring(0, ids.length - 1);
+
+
+    document.getElementById("modifyTermHidden").value = ids;
+    document.getElementById('modifyTermForm').submit();
+}
+function deleteDisciplineFromTerm () {
+    var checkedCheckboxs =
+        document.querySelectorAll('input[name=idDiscipline]:checked')
+
+
+    // "1 2 5 7" - string
+    var ids = ""
+    for (var i = 0; i < checkedCheckboxs.length; i++) {
+        ids = ids + checkedCheckboxs[i].value + ",";
+    }
+    ids = ids.substring(0, ids.length - 1);
+
+
+    document.getElementById("deleteDisciplineFromTermHidden").value = ids;
+    document.getElementById('deleteDisciplineFromTermForm').submit();
+}
+
 

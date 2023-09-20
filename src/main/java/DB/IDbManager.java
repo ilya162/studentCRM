@@ -40,12 +40,14 @@ public interface  IDbManager {
 
     void deleteDiscipline(String ids);
 
-    void createTerm(String name, String duration,String disciplines);
+    void createTerm(String name, String duration, String[] id);
 
 
     boolean checkUser(String login, String password);
 
-    void deleteTerm(String ids);
+    void deleteTerm(String selectId);
 
     List <Discipline> getDisciplineToTerm(String id);
+
+    void modifyTerm(String id, String duration, String[] ids);
 }

@@ -60,39 +60,73 @@
 
 
 </div>
-<p class="zagolovok2">Система управления студентами и их успеваемостью</p>
-
 <div class="container">
+    <p class="zagolovok2">Система управления студентами и их успеваемостью</p>
+
     <div class="row">
-        <div class="col-sm-7">
-            <form action="/term" method="get">
-                <select onChange="deleteTerm(this.options[this.selectedIndex].value)"  name="selectId" class="form-select termselect2">
-                    <c:forEach items="${terms}" var="t">
-                        <option value="${t.id}"
-                                <c:if test="${t.id == termFirst.id}">
-                                    selected
-                                </c:if>
-                        >${t.name}, ${t.duration}</option>
-                    </c:forEach>
-                </select>
-                <button class="btn btn-primary" type="submit">Выбрать</button>
-                <input type="hidden" name="deleteTermHidden"  value="${termFirst.id}">
-            </form>
 
+        <div class="col-sm-4 disptbut">
+            <div class="d-grid gap-6 col-10 mx-auto">
+                <button class="btn btn-primary buttons" type="button"><a href="/term_create">Создать семестр</a>
+                </button>
+            </div>
         </div>
+        <div class="col-sm-4 disptbut">
+            <div class="d-grid gap-6 col-10 mx-auto">
+                <input type="submit" class="btn btn-primary buttons" value="Модифицировать текущий семестр"
+                       onclick="term_modify()">
 
 
-
+            </div>
+        </div>
+        <div class="col-sm-4 disptbut">
+            <div class="d-grid gap-6 col-10 mx-auto">
+                <input type="submit" class="btn btn-primary buttons" value="Удалить текущий семестр"
+                       onclick="deleteTerm()">
+            </div>
+        </div>
     </div>
-
 </div>
 
-<p class="displist2">Длительность семестра: ${duration}</p>
-<p class="displist2">Список дисциплин семестра: </p>
 
 <div class="row">
-    <div class="col-sm-5">
 
+    <div class="col-sm-5">
+        <p class="displist2">Список активных семестров: </p>
+        <form action="/term" method="get">
+            <table class="table table-dark table-striped-columns tabdata">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Наименование семестра</th>
+                    <th scope="col">Длительность</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${terms}" var="t">
+                    <tr>
+                        <th scope="row">
+                            <input class="form-check-input" type="checkbox" value="${t.id}" name="idTerm"
+                                   aria-label="...">
+                            <c:if test="${t.id == termFirst.id}">
+
+                            </c:if>
+                        </th>
+                        <td>${t.name}</td>
+                        <td>${t.duration}</td>
+                    </tr>
+                </c:forEach>
+
+                </tbody>
+            </table>
+            <button class="btn btn-primary termselbut" type="submit">Выбрать</button>
+            <input type="hidden" name="changeTermHidden" value="${t.id}">
+            <input type="hidden" name="idTerm" value="${t.id}">
+
+        </form>
+    </div>
+    <div class="col-sm-5">
+        <p class="displist2">Список дисциплин семестра: </p>
         <table class="table table-dark table-striped tabdata">
 
 
@@ -106,7 +140,8 @@
             <c:forEach items="${disciplines}" var="disc">
                 <tr>
                     <th scope="row">
-                        <input class="form-check-input" type="checkbox" value="${disc.id}" name="idDiscipline" aria-label="...">
+                        <input class="form-check-input" type="checkbox" value="${disc.id}" name="idDiscipline"
+                               aria-label="...">
                     </th>
                     <td>${disc.name}</td>
                 </tr>
@@ -115,31 +150,34 @@
             </tbody>
         </table>
     </div>
-    <div class="col-sm-7 disptbut">
-        <div class="d-grid gap-4 col-6 mx-auto">
-            <button class="btn btn-primary buttons" type="button"><a href="/term_create">Создать семестр</a></button>
-            <button class="btn btn-primary buttons" type="button"><a href="termmodifying.html">Модифицировать текущий
-                семестр</a></button>
-            <input type="submit" class="btn btn-primary buttons" value="Удалить текущий семестр" onclick="deleteTerm()">
-        </div>
-    </div>
-</div>
+
 </div>
 
+</div>
 
 
 <form id="changeTermForm" action="/changeTerm" method="get">
     <input type="hidden" id="changeTermHidden" name="TermHidden">
 </form>
 
-<form id="deleteTermForm" action="/deleteTerm" method="post">
+<form id="deleteTermForm" action="/deleteTerm" method="get">
     <input type="hidden" id="deleteTermHidden" name="deleteTermHidden">
 </form>
 
+<form id="createTermForm" action="term_create" method="post">
+    <input type="hidden" id="createTermHidden" name="createTermHidden">
+</form>
+
+<form id="modifyTermForm" action="/term_modify" method="get">
+    <input type="hidden" id="modifyTermHidden" name="modifyTermHidden">
+</form>
+
+<form id="deleteDisciplineFromTerm" action="/term_modify" method="post">
+    <input type="hidden" id="deleteDisciplineFromTermHidden" name="deleteDisciplineFromTermHidden">
+</form>
 
 
-
-<script src="../resources/js/functions.js" ></script>
+<script src="../resources/js/functions.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

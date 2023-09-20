@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../resources/styles/styles.css">
+
 </head>
 <body>
 
@@ -25,13 +26,12 @@
 <div class="container loginform">
     <form action="/login" method="post">
         <div class="mb-3">
-            <label class="form-label"></label>
-            <input type="text" class="form-control" placeholder="Введите логин" id="" name="login" aria-describedby="">
+
+            <input type="text" class="form-control" placeholder="Введите логин" name="login">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"></label>
-            <input type="password" class="form-control" placeholder="Введите пароль" id="exampleInputPassword1"
-                   name="password">
+
+            <input type="password" class="form-control" placeholder="Введите пароль" name="password">
         </div>
 
         <button type="submit" class="btn btn-primary butenter">Войти</button>

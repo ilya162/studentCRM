@@ -57,34 +57,35 @@
     <p class="modify">Для создания студента, заполните все поля и нажмите "Создать".</p>
 
     <form action="/student_create" method="post">
-        <div class="row mb-3 tabmodify">
-            <label class="col-sm-2 col-form-label"></label>
+        <div class="row tabmodify">
+
             <div class="col-sm-4">
                 <input type="text" class="form-control" placeholder="Фамилия" name="ser_name" required>
             </div>
         </div>
-        <div class="row mb-3 tabmodify">
-            <label class="col-sm-2 col-form-label"></label>
+        <div class="row tabmodify">
+
             <div class="col-sm-4">
                 <input type="text" class="form-control" placeholder="Имя" name="name" required>
             </div>
         </div>
-        <div class="row mb-3 tabmodify">
-            <label class="col-sm-2 col-form-label"></label>
+        <div class="row tabmodify">
+
             <div class="col-sm-4">
                 <input type="text" class="form-control" placeholder="Группа" name="group" required>
             </div>
         </div>
-        <div class="row mb-3 tabmodify">
-            <label class="col-sm-2 col-form-label"></label>
+        <div class="row tabmodify">
+
             <div class="col-sm-4">
                 <p>Выберите дату поступления: </p>
                 <input type="date" class="form-control" name="date_in" required value="2023-08-01"
                        max="2023-09-01" min="2000-09-01">
-
+                <button type="submit" class="btn btn-primary push ">Создать</button>
             </div>
+
         </div>
-        <button type="submit" class="btn btn-primary push ">Создать</button>
+
     </form>
 
 
