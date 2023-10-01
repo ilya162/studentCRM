@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="../resources/styles/styles.css">
     <title>Система управления студентами и их успеваемостью</title>
 </head>
-<body>
+
 
 
 <div class="container main">
@@ -63,15 +64,16 @@
 <div class="container">
     <p class="zagolovok2">Система управления студентами и их успеваемостью</p>
 
-    <p class="hello">Добро пожаловать в "Систему управления студентами и их успеваемостью"!</p>
+    <p class="hello">Здравствуйте!</p>
     <p class="features"> Здесь вы сможете:</p>
     <div class="features2">
         <ul class="functions">
             <li>
-                Создавать и редактировать студентов, дисциплины, семестры.
+                Просматривать успеваемость студентов.
+
             </li>
             <li>
-                Просматривать успеваемость студентов.
+                Создавать и редактировать студентов, дисциплины, семестры.
             </li>
         </ul>
 
@@ -81,9 +83,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+<footer class="autor">Created by Ilya Shtyrev&copy;2023</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -6,24 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Система управления студентами и их успеваемостью</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../resources/styles/styles.css">
+
 
 </head>
 <body>
 
-
-<nav class="navbar navbar-expand-lg .bg-body">
-    <div class="container main">
-        <a href="/login"><img src="../resources/img/logo2.png" alt="logo"></a>
-
-
-    </div>
-</nav>
-<p class="zagolovok2">Система управления студентами и их успеваемостью</p>
-
 <div class="container loginform">
+
+    <h2 class="login_header" >Система управления студентами и их успеваемостью</h2>
+
+
     <form action="/login" method="post">
         <div class="mb-3">
 
@@ -39,15 +35,12 @@
 
 </div>
 <c:if test="${Error =='loginError'}">
-    <h2 class="login_error">Введен не правильный логин или пароль!</h2>
+    <h2 class="login_error">Введён не правильный логин или пароль!</h2>
 </c:if>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 </body>
 </html>

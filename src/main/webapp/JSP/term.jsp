@@ -61,7 +61,7 @@
 
 </div>
 <div class="container">
-    <p class="zagolovok2">Система управления студентами и их успеваемостью</p>
+
 
     <div class="row">
 
@@ -86,74 +86,74 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-sm-5">
+            <p class="displist2">Список активных семестров: </p>
+            <form action="/term" method="get">
+                <table class="table table-dark table-striped-columns tabdata">
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Наименование семестра</th>
+                        <th scope="col">Длительность</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${terms}" var="t">
+                        <tr>
+                            <th scope="row">
+                                <input class="form-check-input" type="checkbox" value="${t.id}" name="idTerm"
+                                       aria-label="...">
+                                <c:if test="${t.id == termFirst.id}">
+
+                                </c:if>
+                            </th>
+                            <td>${t.name}</td>
+                            <td>${t.duration}</td>
+                        </tr>
+                    </c:forEach>
+
+                    </tbody>
+                </table>
+                <button class="btn btn-primary termselbut" type="submit">Выбрать</button>
+                <input type="hidden" name="changeTermHidden" value="${t.id}">
+                <input type="hidden" name="idTerm" value="${t.id}">
+
+            </form>
+        </div>
+
+        <div class="col-sm-6">
+            <p class="displist2">Список дисциплин семестра: </p>
+            <table class="table table-dark table-striped tabdata">
 
 
-<div class="row">
-
-    <div class="col-sm-5">
-        <p class="displist2">Список активных семестров: </p>
-        <form action="/term" method="get">
-            <table class="table table-dark table-striped-columns tabdata">
                 <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Наименование семестра</th>
-                    <th scope="col">Длительность</th>
+                    <th scope="col">Наименование дисциплины</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${terms}" var="t">
+                <c:forEach items="${disciplines}" var="disc">
                     <tr>
                         <th scope="row">
-                            <input class="form-check-input" type="checkbox" value="${t.id}" name="idTerm"
+                            <input class="form-check-input" type="checkbox" value="${disc.id}" name="idDiscipline"
                                    aria-label="...">
-                            <c:if test="${t.id == termFirst.id}">
-
-                            </c:if>
                         </th>
-                        <td>${t.name}</td>
-                        <td>${t.duration}</td>
+                        <td>${disc.name}</td>
                     </tr>
                 </c:forEach>
 
                 </tbody>
             </table>
-            <button class="btn btn-primary termselbut" type="submit">Выбрать</button>
-            <input type="hidden" name="changeTermHidden" value="${t.id}">
-            <input type="hidden" name="idTerm" value="${t.id}">
+        </div>
 
-        </form>
+
     </div>
-    <div class="col-sm-5">
-        <p class="displist2">Список дисциплин семестра: </p>
-        <table class="table table-dark table-striped tabdata">
-
-
-            <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Наименование дисциплины</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${disciplines}" var="disc">
-                <tr>
-                    <th scope="row">
-                        <input class="form-check-input" type="checkbox" value="${disc.id}" name="idDiscipline"
-                               aria-label="...">
-                    </th>
-                    <td>${disc.name}</td>
-                </tr>
-            </c:forEach>
-
-            </tbody>
-        </table>
-    </div>
-
 </div>
 
-</div>
+
+
 
 
 <form id="changeTermForm" action="/changeTerm" method="get">

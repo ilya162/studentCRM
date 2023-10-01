@@ -6,7 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+
 public class LoginFilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException
+    {
+    }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -14,36 +20,40 @@ public class LoginFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
 
-        String isLogin = req.getSession().getAttribute("isLogin.") != null ?
-                req.getSession().getAttribute("isLogin.").toString()
+        String isLogin = req.getSession().getAttribute("isLogin") != null ?
+                req.getSession().getAttribute("isLogin").toString()
                 : null;
 
 
-        String requestURI = req.getRequestURI();
+        String URI = req.getRequestURI();
 
 
-        if (isLogin != null && isLogin.equals("1") && requestURI.endsWith("/login")) {
-            resp.sendRedirect("/title");
-            return;
+            if (isLogin != null && isLogin.equals("1") && URI.endsWith("/login")) {
+                resp.sendRedirect("/title");
+                return;
+            }
+            if (isLogin != null && isLogin.equals("1") && !URI.endsWith("/login")) {
+                filterChain.doFilter(req, resp);
+            }
+            if (isLogin == null && URI.endsWith("/login")) {
+                filterChain.doFilter(req, resp);
+
+            }
+
+            if (isLogin == null && !URI.endsWith("/login")) {
+                resp.sendRedirect("/login");
+                return;
+            }
+
+
         }
-        if (isLogin != null && isLogin.equals("1") && !requestURI.endsWith("/login")) {
-            filterChain.doFilter(req, resp);
-        }
-        if (isLogin == null && requestURI.endsWith("/login")) {
-            filterChain.doFilter(req, resp);
-
-        }
-
-        if (isLogin == null && !requestURI.endsWith("/login")) {
-            resp.sendRedirect("/login");
-            return;
-        }
-
+    public void destroy(){
 
     }
 
-    @Override
-    public void destroy() {
-        Filter.super.destroy();
-    }
+
+
 }
+
+
+

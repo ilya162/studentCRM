@@ -4,8 +4,8 @@ body{
     background-size: cover;
     position: relative;
 
-
 }
+
 .loginform {
     max-width: 400px;
     margin-top: 50px;
@@ -106,7 +106,7 @@ a:active {
 }
 .tabdata{
     max-width:1000px;
-    margin-left: 150px;
+
     margin-top: 50px;
     text-align: center;
 }
@@ -167,13 +167,12 @@ font-weight: bolder;
  
 }
 .features2{
-    color: gold;
+    color: white;
     letter-spacing: 3px;
-    font-size: larger;
+    font-size:x-large;
     font-weight: bolder;
     margin-left: 55px;
-    text-decoration:underline;
-    padding-bottom: 20px;
+     padding-bottom: 20px;
 
 }
 .functions{
@@ -198,17 +197,17 @@ font-weight: bolder;
 }
 .termselect2{
     max-width: 300px;
-    margin-left: 215px;
+    margin-left: 20px;
     margin-top: 50px;
 }
 .termselbut{
     min-width: 200px;
-    margin-left: 300px;
+    margin-left: 150px;
     margin-top: 20px;
 }
 .point{
     margin-top: 40px;
-    margin-right: 180px;
+    margin-right: 250px;
     min-width: 150px;
 }
 .login_error{
@@ -223,4 +222,15 @@ font-weight: bolder;
 .termcreate{
     margin-top: 10px;
 }
+.autor{
+    color: yellow;
+    text-align: end;
+    margin-top: 160px;
+
+}
+.login_header{
+    color: yellow;
+}
+
+
 

@@ -49,15 +49,15 @@
 
 
 </div>
-<p class="zagolovok2">Система управления студентами и их успеваемостью</p>
+
 
 <div class="container">
 
-    <p class="displist">Список дисциплин</p>
+
 
     <div class="row">
-        <div class="col-sm-5">
-
+        <div class="col-sm-6">
+            <p class="displist">Список дисциплин:</p>
             <table class="table table-dark table-striped tabdata">
 
 
@@ -79,7 +79,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-7 disptbut">
+        <div class="col-sm-6 disptbut">
             <div class="d-grid gap-4 col-6 mx-auto">
                 <button class="btn btn-primary buttons" type="button"> <a href="/discipline_create">Создать дисциплину</a></button>
                 <input type="submit"  class="btn btn-primary buttons" value="Модифицировать выбранную дисциплину" onclick="modifyDiscipline()" >
