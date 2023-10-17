@@ -1,27 +1,32 @@
-# studentCRM
+# studentCRM http://www.student-crm.ru
+
+CRM "Смстема управления студентами и их успеваемостью"  позволяет:
+<p> :zap:Создавать и редактировать студентов, дисциплины, семестры.</p>
+<p> :zap:Просматривать успеваемость студентов.</p>
 
 
-<!---Пример кода-->
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Hello,+world!)](https://git.io/typing-svg)
-<h1 align="center">Hi , I'm Ilya. 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Java junior developer from Russia.</h3>
-<div align="center">
-  <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="900" height="300"/>
-</div>
-<h4>
- <div>This is my first full-fledged project.</div> 
-  <p>Link to it: http://www.student-crm.ru</p>
-<p>Below are the technologies I used in this project:</p>
-<div>
-<p>:zap: Java EE: Servlets, JSP, Tomcat, HTTP, Filters, Listeners.</p>
-<p>:zap: Web site markup languages: HTML5, CSS3, Bootstrap.</p>
-<p>:zap: JavaScript (basics).</p>
-<p>:zap: MySQL(Creating queries, connecting the database to the server).</p>
-<p>:zap: Design pattern: MVC.</p>
-<p>:zap: Ubuntu (virtual server on hosting).</p>
-</div>
-</h4>
+
+<h3><div>Описание</div> </h3>
+
+<p>CRM "Смстема управления студентами и их успеваемостью" представляет собой Java Servlet API приложение, которое позволяет пользователям вести базу студентов, дисциплин,семестров (добавлять, редактировть,удалять), просматривать успеваемость студентов.</p>
+
+
+<h3><div>Функциональность</div> </h3>
+<p>:zap: В CRM осуществлен процесс авторизации.</p>
+<p>:zap: Вся информация о создании, редактировании и удалении объектов  отправляется в базу данных.</p>
+
+
+<h3><div>Технологии</div> </h3>
+
+<p>:zap: JDBC, SQL.</p>
+<p>:zap: MVC.</p>
+<p>:zap: HTML,CSS. (для верстки страниц).</p>
+<p>:zap: JavaScript.</p>
+<p>:zap: Ubuntu, Tomcat (развертывание сервера на виртуальном сервере VPS).</p>
+
+
+
+
  
 <div align="center">
   <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="80" height="80"/>&nbsp;
@@ -31,3 +36,9 @@
    <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL"  alt="MySQL"width="80" height="80"/>&nbsp;
    <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="80" height="80"/>
 </div>
+
+![students](https://github.com/ilya162/studentCRM/assets/55856244/11432506-875e-4e21-a448-5392e218bf15)
+![score](https://github.com/ilya162/studentCRM/assets/55856244/777b085e-bf1b-4a6d-9346-ce2fc88932f3)
+![terms](https://github.com/ilya162/studentCRM/assets/55856244/02fcb11b-03eb-4c7f-a2fb-c4874d5580e3)
+
+
