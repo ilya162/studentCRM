@@ -1,6 +1,6 @@
-package DB;
+package db;
 
-import Constaince.BdPeremennie;
+import сonstaince.BdPeremennie;
 import entity.DisciplineMark;
 import entity.Discipline;
 import entity.Student;

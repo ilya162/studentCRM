@@ -1,6 +1,6 @@
 package controllers;
 
-import DB.DbManager;
+import db.DbManager;
 import entity.DisciplineMark;
 import entity.Student;
 import entity.Term;

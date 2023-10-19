@@ -1,10 +1,6 @@
 package controllers;
 
-import DB.DbManager;
-import entity.DisciplineMark;
-import entity.Student;
-
-import java.util.List;
+import db.DbManager;
 
 public class Discipline_Mark {
     DbManager db = new DbManager();

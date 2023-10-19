@@ -1,6 +1,6 @@
 package controllers;
 
-import DB.DbManager;
+import db.DbManager;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -1,8 +1,7 @@
 package controllers;
 
-import DB.DbManager;
+import db.DbManager;
 import entity.Discipline;
-import entity.Student;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
