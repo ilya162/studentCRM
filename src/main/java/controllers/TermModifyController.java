@@ -1,13 +1,15 @@
 package controllers;
 
-import db.DbManager;
+import DB.DbManager;
 import entity.Discipline;
 import entity.Term;
 import functions.Operations;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -34,8 +36,6 @@ public class TermModifyController extends HttpServlet {
             String ids = String.valueOf(termFirst.getId());
             request.setAttribute("terms", terms);
             request.setAttribute("termFirst", termFirst);
-
-
             List<Discipline> disciplines = db.getDisciplineToTerm(ids);
             request.setAttribute("disciplines", disciplines);
             request.getRequestDispatcher("JSP/term_modify.jsp").forward(request, response);
@@ -49,9 +49,7 @@ public class TermModifyController extends HttpServlet {
         String id = request.getParameter("id");
         String duration = request.getParameter("duration");
         String[] ids = request.getParameterValues("idDiscipline");
-
         DbManager db = new DbManager();
-
         db.modifyTerm(id, duration, ids);
         response.sendRedirect("/term");
     }

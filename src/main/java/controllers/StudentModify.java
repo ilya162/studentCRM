@@ -1,11 +1,13 @@
 package controllers;
 
-import db.DbManager;
+import DB.DbManager;
 import entity.Student;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "StudentModify", value = "/student_modify")
@@ -13,9 +15,6 @@ public class StudentModify extends HttpServlet {
     private String id;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//  получаем данные
-//  отображаем
-//  открываем страницу
         id = request.getParameter("modifyStudentHidden");
         DbManager db = new DbManager();
         Student student = db.getStudentToId(id);
@@ -25,10 +24,6 @@ public class StudentModify extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-// получаем данные с о страницы
-//                сохраняем
-//                возвращаемся на страницу студентов
-//
         String ser_name = request.getParameter("ser_name");
         String name = request.getParameter("name");
         String group = request.getParameter("group");

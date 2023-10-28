@@ -1,12 +1,15 @@
-package db;
+package DB;
 
-import сonstaince.BdPeremennie;
-import entity.DisciplineMark;
 import entity.Discipline;
+import entity.DisciplineMark;
 import entity.Student;
 import entity.Term;
+import сonstaince.BdVariables;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +19,7 @@ public class DbManager implements IDbManager {
         List<Student> res = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM  student where status = '1';");
@@ -43,7 +46,7 @@ public class DbManager implements IDbManager {
         List<Discipline> res = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM discipline where status = '1';");
@@ -67,7 +70,7 @@ public class DbManager implements IDbManager {
         List<Term> res = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM term where status = '1';");
@@ -93,7 +96,7 @@ public class DbManager implements IDbManager {
         List<DisciplineMark> res = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("select d.id as id_d, d.name as name_d,m.id as id_m, m.name as name_m from student s\n" +
@@ -126,7 +129,7 @@ public class DbManager implements IDbManager {
         Discipline res = new Discipline();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM  discipline where id =" + id + ";");
@@ -151,7 +154,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("UPDATE `discipline` SET `name` = '" + name + "' WHERE (`id` = " + id + ");");
@@ -167,7 +170,7 @@ public class DbManager implements IDbManager {
         Student res = new Student();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM  student where id =" + id + ";");
@@ -195,7 +198,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("UPDATE `discipline` SET `status` = '0' WHERE (`id` in(" + ids + ") );");
@@ -214,7 +217,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             String createTerm = "INSERT INTO `term` (`name`, `duration`) VALUES ('" + name + "','" + duration + "')  ";
@@ -243,7 +246,7 @@ public class DbManager implements IDbManager {
     public boolean checkUser(String login, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM user where login = '" + login + "' and password = '" + password + "'");
@@ -267,7 +270,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("UPDATE `term` SET `status` = '0' WHERE `id` =  '" + selectId + "'");
@@ -284,7 +287,7 @@ public class DbManager implements IDbManager {
         List<Discipline> res = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT d.id as id_d,d.name as name_d from term_discipline td\n" +
@@ -314,7 +317,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("UPDATE `term` SET `duration` = '" + duration + "' WHERE (`id` = '" + id + "')");
@@ -343,7 +346,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("INSERT INTO `java_7_student`.`student` (`ser_name`, `name`, `group`, `date_in`)" + " VALUES ('" + ser_name + "','" + name + "','" + group + "','" + date_in + "')");
@@ -361,7 +364,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("INSERT INTO `java_7_student`.`discipline`(`name`)" + " VALUES ('" + name + "')");
@@ -378,7 +381,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("UPDATE `student` SET `status` = '0' WHERE (`id` in(" + ids + ") );");
@@ -394,7 +397,7 @@ public class DbManager implements IDbManager {
         Student res = new Student();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT * FROM  student where id =" + id + ";");
@@ -423,7 +426,7 @@ public class DbManager implements IDbManager {
         Statement stmt;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             stmt = conn.createStatement();
 
             stmt.execute("UPDATE `student` SET `ser_name` = '" + ser_name + "', `name` = '" + name + "', `group` = '" + group + "', `date_in` = '" + date_in + "' WHERE (`id` = " + id + ");");
@@ -439,7 +442,7 @@ public class DbManager implements IDbManager {
         List<Term> res = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdPeremennie.LOGIN, BdPeremennie.PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_7_student", BdVariables.LOGIN, BdVariables.PASSWORD);
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("SELECT t.* FROM term t\n" +

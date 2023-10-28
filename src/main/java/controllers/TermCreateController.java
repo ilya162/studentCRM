@@ -1,11 +1,13 @@
 package controllers;
 
-import db.DbManager;
+import DB.DbManager;
 import entity.Discipline;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,18 +24,11 @@ public class TermCreateController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//перехватить данные,2) сохранить данные в бд 3) перейти на страницу семестров
-
         String name = request.getParameter("name");
         String duration = request.getParameter("duration");
         String[] id = (request.getParameterValues("idDiscipline"));
-
         DbManager db = new DbManager();
-
-
         db.createTerm(name, duration, id);
-
-
         response.sendRedirect("/term");
     }
 }

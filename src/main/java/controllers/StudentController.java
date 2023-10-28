@@ -1,11 +1,13 @@
 package controllers;
 
-import db.DbManager;
+import DB.DbManager;
 import entity.Student;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -13,7 +15,6 @@ import java.util.List;
 public class StudentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // подключиться к бд, получить данные,передать данные на фронт
         DbManager db = new DbManager();
         List<Student> students = db.getActiveStudent();
         request.setAttribute("students",students);

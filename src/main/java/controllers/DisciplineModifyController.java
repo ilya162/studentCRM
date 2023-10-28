@@ -1,11 +1,13 @@
 package controllers;
 
-import db.DbManager;
+import DB.DbManager;
 import entity.Discipline;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "DisciplineModifyController", value = "/discipline_modify")
@@ -22,15 +24,9 @@ public class DisciplineModifyController extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//                получаем данные со страницы
-//                сохраняем
-//                возвращаемся на страницу студентов
-//
 
         String name = request.getParameter("name");
-
         DbManager db = new DbManager();
-
         db.modifyDiscipline(id,name);
         response.sendRedirect("/disciplines");
 

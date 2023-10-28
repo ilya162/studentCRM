@@ -1,10 +1,8 @@
 package сonstaince;
 
-public interface BdPeremennie {
+public interface BdVariables {
     String LOGIN = "root";
     String PASSWORD = "162Qwertyu";
-
-
 
 
 }
