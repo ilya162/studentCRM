@@ -1,4 +1,4 @@
-package DB;
+package database;
 
 import entity.Discipline;
 import entity.DisciplineMark;

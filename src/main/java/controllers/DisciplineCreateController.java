@@ -1,6 +1,6 @@
 package controllers;
 
-import DB.DbManager;
+import database.DbManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
